@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {@apply text-textPrimary bg-background font-body;}
+  h1, h2, h3, h4, h5, h6 {@apply font-heading text-textPrimary;}
+  ::selection {background: #00B4D8; color: #ffffff;}
+  a {@apply text-primary;}
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black;
+  }
+  .btn-accent {
+    @apply inline-flex items-center justify-center rounded-md bg-accent px-4 py-2.5 text-sm font-semibold text-textPrimary shadow-sm hover:brightness-95;
+  }
+  .badge-success {
+    @apply rounded bg-green-50 px-2 py-0.5 text-xs font-medium text-green-700 ring-1 ring-green-100;
+  }
+}
