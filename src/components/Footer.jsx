@@ -7,7 +7,7 @@ function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="text-center sm:text-left">
             <div className="flex items-center gap-2 justify-center sm:justify-start">
-              <img src={logo} alt="MyTravelDeals" className="h-8 w-auto" />
+              <img src={logo} alt="MyTravelDeals" className="h-12 w-auto" />
             </div>
             <p className="mt-3 text-sm text-textSecondary">Your trusted partner for flights, hotels, visas, insurance and complete travel packages worldwide.</p>
           </div>

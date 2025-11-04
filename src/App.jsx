@@ -7,7 +7,7 @@ function App() {
   return (
     <Layout>
       <section className="relative isolate w-full bg-transparent">
-        <div className="w-full px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center">
+        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 pt-10 pb-10 sm:pt-20 sm:pb-16 lg:pb-10 text-center">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-textPrimary">
             Get Up to 75% OFF Your Next Trip!
     </h1>
@@ -34,17 +34,19 @@ function App() {
         </div>
       </section>
 
-      <section id="offers" className="w-full px-4 sm:px-6 lg:px-8 py-12 bg-transparent">
+      <section id="offers" className="w-full px-6 sm:px-8 lg:px-10 py-14 sm:py-20 md:pt-12 lg:pt-10 bg-transparent">
+        <div className="w-full max-w-7xl mx-auto text-center">
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-textPrimary">Hot offers right now</h2>
         <p className="mt-2 text-textSecondary">Grab limited-time savings up to 75% across categories. Deals update daily.</p>
 
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           <OfferCard
             title="Hotels"
             subtitle="Luxury stays worldwide"
             image="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1600&auto=format&fit=crop"
             discountLabel="Save 70%"
             urgencyLabel="Limited Time"
+            href="https://www.hotels.com/affiliate/nmN21fE"
           />
           <OfferCard
             title="Cruises"
@@ -52,6 +54,7 @@ function App() {
             image="https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?q=80&w=1600&auto=format&fit=crop"
             discountLabel="Up to 75%"
             urgencyLabel="Book Now"
+            href="https://expedia.com/affiliate/SV55ARl"
           />
           <OfferCard
             title="Flights"
@@ -59,6 +62,7 @@ function App() {
             image="https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
             discountLabel="Save 60%"
             urgencyLabel="Today Only"
+            href="https://expedia.com/affiliate/SWpU6hA"
           />
           <OfferCard
             title="Tours"
@@ -66,6 +70,7 @@ function App() {
             image="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1600&auto=format&fit=crop"
             discountLabel="Up to 65%"
             urgencyLabel="Hot Deals"
+            href="https://expedia.com/affiliate/eL1YtI8"
           />
           <OfferCard
             title="Car Rentals"
@@ -73,6 +78,7 @@ function App() {
             image="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop"
             discountLabel="Save 50%"
             urgencyLabel="Last Chance"
+            href="https://expedia.com/affiliate/fous0wv"
           />
           <OfferCard
             title="Vacation Rentals"
@@ -80,14 +86,9 @@ function App() {
             image="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop"
             discountLabel="Up to 80%"
             urgencyLabel="Exclusive"
+            href="https://vrbo.com/affiliates/vrbo-home.GN8Wn00"
           />
-          <OfferCard
-            title="Vacation Insurance"
-            subtitle="Travel protection"
-            image="https://images.unsplash.com/photo-1560332944-d047e59ac9b2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
-            discountLabel="Best Rates"
-            urgencyLabel="Protect Now"
-          />
+        </div>
         </div>
       </section>
 
@@ -170,7 +171,7 @@ function App() {
 
                       <div className="flex flex-col items-center gap-2 md:gap-4">
                         <a 
-                          href="#lead"
+                          href="https://expedia.com/affiliates/expedia-home.MZ0pw5g"
                           className="bg-primary hover:bg-primary/90 text-white px-6 md:px-12 py-2.5 md:py-4 rounded-lg md:rounded-xl font-semibold text-sm md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto"
                         >
                           Unlock Sale Deals
@@ -234,7 +235,7 @@ function App() {
 
                       <div className="flex flex-col items-center gap-2 md:gap-4">
                         <a 
-                          href="#lead"
+                          href="https://www.hotels.com/affiliates/hotelscom-home.HGBds3A"
                           className="bg-secondary hover:bg-secondary/90 text-white px-6 md:px-12 py-2.5 md:py-4 rounded-lg md:rounded-xl font-semibold text-sm md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto"
                         >
                           Find Best Hotels
@@ -246,65 +247,7 @@ function App() {
                 </div>
               </div>
 
-              {/* Travel Insurance Deal */}
-              <div className="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-                <div className="relative h-[500px] lg:h-[600px]">
-                  <img 
-                    src="https://images.unsplash.com/photo-1560332944-d047e59ac9b2?q=80&w=1600&auto=format&fit=crop" 
-                    alt="Travel Insurance" 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                  
-                  {/* Top Badges */}
-                  <div className="absolute top-3 left-2 right-2 sm:top-4 sm:left-4 sm:right-4 md:top-6 md:left-6 md:right-6 flex justify-between items-start gap-2">
-                    <div className="flex items-center gap-1 md:gap-2 bg-white/95 backdrop-blur-sm px-2 py-1 md:px-4 md:py-2 rounded-full shadow-lg max-w-[60%] sm:max-w-none">
-                      <span className="text-textPrimary font-bold text-xs md:text-base">🛡️ <span className="hidden sm:inline">Travel Insurance</span></span>
-                    </div>
-                    <div className="bg-accent text-textPrimary px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-bold shadow-lg whitespace-nowrap flex-shrink-0">
-                      Best Rates
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
-                    <div className="bg-white/95 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-8 shadow-xl text-center">
-                      <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-textPrimary mb-2 md:mb-4">
-                        Best-value, comprehensive travel insurance from trusted providers
-                      </h3>
-                      <p className="text-sm sm:text-base md:text-lg text-textSecondary mb-4 md:mb-8 leading-relaxed max-w-2xl mx-auto">
-                        Protect your trip with comprehensive coverage including medical, trip cancellation, and more.
-                      </p>
-                      
-                      {/* Trust Indicators */}
-                      <div className="flex items-center justify-center gap-2 md:gap-8 mb-4 md:mb-8 text-xs md:text-sm">
-                        <div className="flex items-center gap-1 md:gap-2">
-                          <div className="w-2 h-2 bg-success rounded-full"></div>
-                          <span className="text-textSecondary hidden sm:inline">Licensed Providers</span>
-                        </div>
-                        <div className="flex items-center gap-1 md:gap-2">
-                          <div className="w-2 h-2 bg-primary rounded-full"></div>
-                          <span className="text-textSecondary hidden sm:inline">24/7 Emergency</span>
-                        </div>
-                        <div className="flex items-center gap-1 md:gap-2">
-                          <div className="w-2 h-2 bg-accent rounded-full"></div>
-                          <span className="text-textSecondary hidden lg:inline">Instant Coverage</span>
-                        </div>
-                      </div>
-
-                      <div className="flex flex-col items-center gap-2 md:gap-4">
-                        <a 
-                          href="#lead" 
-                          className="bg-accent hover:bg-accent/90 text-textPrimary px-6 md:px-12 py-2.5 md:py-4 rounded-lg md:rounded-xl font-semibold text-sm md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto"
-                        >
-                          Find Best Insurance
-                        </a>
-                        <div className="text-xs md:text-sm text-textSecondary">Trusted coverage from licensed providers</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
 
               {/* VRBO Deal */}
               <div className="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
@@ -358,7 +301,7 @@ function App() {
 
                       <div className="flex flex-col items-center gap-2 md:gap-4">
                         <a 
-                          href="#lead" 
+                          href="https://vrbo.com/affiliates/vrbo-home.8SPj1vG" 
                           className="bg-success hover:bg-success/90 text-white px-6 md:px-12 py-2.5 md:py-4 rounded-lg md:rounded-xl font-semibold text-sm md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto"
                         >
                           Find Best Rentals
@@ -373,26 +316,7 @@ function App() {
             </div>
           </div>
 
-          {/* Bottom CTA */}
-          <div className="text-center mt-8 md:mt-16">
-            <div className="bg-gradient-to-r from-primary to-secondary rounded-xl md:rounded-2xl p-6 md:p-8 lg:p-12 text-white">
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4">
-                Ready to Save on Your Next Trip?
-              </h3>
-              <p className="text-sm md:text-base lg:text-lg mb-4 md:mb-6 opacity-90 max-w-2xl mx-auto">
-                Join thousands of travelers who save big with our exclusive partner deals and personalized service.
-              </p>
-              <a 
-                href="#lead" 
-                className="inline-flex items-center gap-2 bg-white text-primary px-6 md:px-8 py-3 md:py-4 rounded-lg md:rounded-xl font-bold text-base md:text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto justify-center"
-              >
-                Get Your Free Quote
-                <svg className="w-4 md:w-5 h-4 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
-          </div>
+          
         </div>
       </section>
 

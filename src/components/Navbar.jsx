@@ -10,7 +10,7 @@ function Navbar() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Primary">
         <div className="flex h-16 items-center justify-between relative">
           <a href="/" className="flex items-center gap-2 absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
-            <img src={logo} alt="MyTravelDeals" className="h-8 w-auto" />
+            <img src={logo} alt="MyTravelDeals" className="h-10 w-auto md:h-12 max-w-[180px] object-contain" />
           </a>
 
         <div className="hidden md:flex items-center gap-8">

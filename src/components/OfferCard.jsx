@@ -31,7 +31,7 @@ function OfferCard({
             {subtitle ? <p className="mt-1 text-xs sm:text-sm text-white/90 drop-shadow">{subtitle}</p> : null}
           </div>
           <div className="mt-2 sm:mt-3">
-            <a href={href} className="inline-flex items-center gap-1 sm:gap-2 rounded-lg bg-accent/95 px-4 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-sm font-semibold text-textPrimary shadow hover:brightness-95 whitespace-nowrap">
+            <a href={href} {...(href && href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className="inline-flex items-center gap-1 sm:gap-2 rounded-lg bg-accent/95 px-4 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-sm font-semibold text-textPrimary shadow hover:brightness-95 whitespace-nowrap">
               <span className="text-base">🚀</span> <span className="hidden sm:inline">{ctaText}</span><span className="sm:hidden">Grab Deal Now</span>
             </a>
           </div>
