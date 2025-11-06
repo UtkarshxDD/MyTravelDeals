@@ -2,6 +2,7 @@ import './App.css'
 import Layout from './components/Layout'
 import { FaShieldAlt, FaClock, FaStar } from 'react-icons/fa'
 import OfferCard from './components/OfferCard'
+import { trackButtonClick, trackExternalLink, trackPartnerDealClick } from './utils/analytics.js'
 
 function App() {
   return (
@@ -18,7 +19,13 @@ function App() {
             Don’t miss out on massive savings book now before these deals disappear! We compare top brands, secure real discounts, and support you 24/7.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#offers" className="btn-secondary px-7 py-3.5 text-base rounded-lg shadow-sm">Browse Offers</a>
+            <a 
+              href="#offers" 
+              className="btn-secondary px-7 py-3.5 text-base rounded-lg shadow-sm"
+              onClick={() => trackButtonClick('Browse Offers', 'hero_section')}
+            >
+              Browse Offers
+            </a>
           </div>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="flex items-center justify-center gap-2 rounded-lg border border-success/20 bg-success/10 px-4 py-3 text-base text-textPrimary">
@@ -173,6 +180,10 @@ function App() {
                         <a 
                           href="https://expedia.com/affiliates/expedia-home.MZ0pw5g"
                           className="bg-primary hover:bg-primary/90 text-white px-6 md:px-12 py-2.5 md:py-4 rounded-lg md:rounded-xl font-semibold text-sm md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto"
+                          onClick={() => {
+                            trackPartnerDealClick('Expedia', 'Unlock Sale Deals', 'services_section');
+                            trackExternalLink('https://expedia.com/affiliates/expedia-home.MZ0pw5g', 'Expedia - Unlock Sale Deals', 'partner_deal_card');
+                          }}
                         >
                           Unlock Sale Deals
                         </a>
@@ -237,6 +248,10 @@ function App() {
                         <a 
                           href="https://www.hotels.com/affiliates/hotelscom-home.HGBds3A"
                           className="bg-secondary hover:bg-secondary/90 text-white px-6 md:px-12 py-2.5 md:py-4 rounded-lg md:rounded-xl font-semibold text-sm md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto"
+                          onClick={() => {
+                            trackPartnerDealClick('Hotels.com', 'Find Best Hotels', 'services_section');
+                            trackExternalLink('https://www.hotels.com/affiliates/hotelscom-home.HGBds3A', 'Hotels.com - Find Best Hotels', 'partner_deal_card');
+                          }}
                         >
                           Find Best Hotels
                         </a>
@@ -303,6 +318,10 @@ function App() {
                         <a 
                           href="https://vrbo.com/affiliates/vrbo-home.8SPj1vG" 
                           className="bg-success hover:bg-success/90 text-white px-6 md:px-12 py-2.5 md:py-4 rounded-lg md:rounded-xl font-semibold text-sm md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto"
+                          onClick={() => {
+                            trackPartnerDealClick('VRBO', 'Find Best Rentals', 'services_section');
+                            trackExternalLink('https://vrbo.com/affiliates/vrbo-home.8SPj1vG', 'VRBO - Find Best Rentals', 'partner_deal_card');
+                          }}
                         >
                           Find Best Rentals
                         </a>

@@ -1,6 +1,14 @@
 import logo from '../assets/logo.png'
+import { trackNavigation, trackExternalLink } from '../utils/analytics.js'
 
 function Footer() {
+  const handleFooterNavClick = (navItem) => {
+    trackNavigation(navItem, 'footer');
+  };
+
+  const handleFooterLinkClick = (linkUrl, linkLabel) => {
+    trackExternalLink(linkUrl, linkLabel, 'footer');
+  };
   return (
     <footer className="mt-16 bg-background border-t border-gray-100">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
@@ -14,20 +22,20 @@ function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-textPrimary">Services</h3>
             <ul className="mt-3 space-y-2 text-sm text-textSecondary">
-              <li><a href="#services" className="hover:text-gray-900">Flights</a></li>
-              <li><a href="#services" className="hover:text-gray-900">Hotels</a></li>
-              <li><a href="#services" className="hover:text-gray-900">Holiday Packages</a></li>
-              <li><a href="#services" className="hover:text-gray-900">Visa Assistance</a></li>
-              <li><a href="#services" className="hover:text-gray-900">Travel Insurance</a></li>
+              <li><a href="#services" className="hover:text-gray-900" onClick={() => handleFooterNavClick('Services - Flights')}>Flights</a></li>
+              <li><a href="#services" className="hover:text-gray-900" onClick={() => handleFooterNavClick('Services - Hotels')}>Hotels</a></li>
+              <li><a href="#services" className="hover:text-gray-900" onClick={() => handleFooterNavClick('Services - Holiday Packages')}>Holiday Packages</a></li>
+              <li><a href="#services" className="hover:text-gray-900" onClick={() => handleFooterNavClick('Services - Visa Assistance')}>Visa Assistance</a></li>
+              <li><a href="#services" className="hover:text-gray-900" onClick={() => handleFooterNavClick('Services - Travel Insurance')}>Travel Insurance</a></li>
             </ul>
           </div>
           <div>
             <h3 className="text-sm font-semibold text-textPrimary">Company</h3>
             <ul className="mt-3 space-y-2 text-sm text-textSecondary">
-              <li><a href="#trust" className="hover:text-gray-900">Why Choose Us</a></li>
-              <li><a href="#testimonials" className="hover:text-gray-900">Reviews</a></li>
-              <li><a href="#faq" className="hover:text-gray-900">FAQs</a></li>
-              <li><a href="#contact" className="hover:text-gray-900">Contact</a></li>
+              <li><a href="#trust" className="hover:text-gray-900" onClick={() => handleFooterNavClick('Company - Why Choose Us')}>Why Choose Us</a></li>
+              <li><a href="#testimonials" className="hover:text-gray-900" onClick={() => handleFooterNavClick('Company - Reviews')}>Reviews</a></li>
+              <li><a href="#faq" className="hover:text-gray-900" onClick={() => handleFooterNavClick('Company - FAQs')}>FAQs</a></li>
+              <li><a href="#contact" className="hover:text-gray-900" onClick={() => handleFooterNavClick('Company - Contact')}>Contact</a></li>
             </ul>
           </div>
           <div>
@@ -42,11 +50,11 @@ function Footer() {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-textSecondary">
           <p>© {new Date().getFullYear()} MyTravelDeals. All rights reserved.</p>
           <div className="flex items-center gap-3">
-            <a href="/privacy" className="hover:text-gray-700">Privacy</a>
+            <a href="/privacy" className="hover:text-gray-700" onClick={() => handleFooterLinkClick('/privacy', 'Privacy Policy')}>Privacy</a>
             <span aria-hidden>•</span>
-            <a href="/terms" className="hover:text-gray-700">Terms</a>
+            <a href="/terms" className="hover:text-gray-700" onClick={() => handleFooterLinkClick('/terms', 'Terms of Service')}>Terms</a>
             <span aria-hidden>•</span>
-            <a href="/refunds" className="hover:text-gray-700">Refunds</a>
+            <a href="/refunds" className="hover:text-gray-700" onClick={() => handleFooterLinkClick('/refunds', 'Refunds Policy')}>Refunds</a>
           </div>
         </div>
       </div>

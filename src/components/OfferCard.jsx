@@ -1,5 +1,6 @@
 import { FaTag, FaClock } from 'react-icons/fa'
 import PropTypes from 'prop-types'
+import { trackOfferClick, trackExternalLink } from '../utils/analytics.js'
 
 function OfferCard({
   title,
@@ -10,6 +11,13 @@ function OfferCard({
   ctaText = 'Grab Deal Now',
   href = '#lead',
 }) {
+  const handleOfferClick = () => {
+    if (href && href.startsWith('http')) {
+      trackExternalLink(href, `${title} - ${ctaText}`, 'offer_card');
+    } else {
+      trackOfferClick(title, 'offer_card', 'offers_section');
+    }
+  };
   return (
     <article className="group overflow-hidden rounded-xl sm:rounded-2xl border border-gray-100 bg-white shadow-sm ring-1 ring-black/5 hover:shadow-md transition">
       <div className="relative aspect-[4/3] sm:aspect-[4/3] overflow-hidden">
@@ -31,7 +39,12 @@ function OfferCard({
             {subtitle ? <p className="mt-1 text-xs sm:text-sm text-white/90 drop-shadow">{subtitle}</p> : null}
           </div>
           <div className="mt-2 sm:mt-3">
-            <a href={href} {...(href && href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className="inline-flex items-center gap-1 sm:gap-2 rounded-lg bg-accent/95 px-4 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-sm font-semibold text-textPrimary shadow hover:brightness-95 whitespace-nowrap">
+            <a 
+              href={href} 
+              {...(href && href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})} 
+              className="inline-flex items-center gap-1 sm:gap-2 rounded-lg bg-accent/95 px-4 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-sm font-semibold text-textPrimary shadow hover:brightness-95 whitespace-nowrap"
+              onClick={handleOfferClick}
+            >
               <span className="text-base">🚀</span> <span className="hidden sm:inline">{ctaText}</span><span className="sm:hidden">Grab Deal Now</span>
             </a>
           </div>
